@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://github.com/dravgust/twa-template",
+  "homepage":"https://dravgust.github.io/twa-template/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
