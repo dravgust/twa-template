@@ -4,7 +4,6 @@ import {
   Sender,
   Address,
   Cell,
-  contractAddress,
   beginCell,
   toNano,
 } from "ton-core";
