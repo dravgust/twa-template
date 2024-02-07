@@ -16,7 +16,7 @@ export function TransferTon() {
       <FlexBoxCol>
         <h3>Transfer TON</h3>
         <FlexBoxRow>
-          <label>Amount </label>
+          <label style={{width: 80}}>Amount </label>
           <Input
             style={{ marginRight: 8 }}
             type="number"
@@ -25,7 +25,7 @@ export function TransferTon() {
           ></Input>
         </FlexBoxRow>
         <FlexBoxRow>
-          <label>To </label>
+          <label style={{width: 80}}>To </label>
           <Input
             style={{ marginRight: 8 }}
             value={tonRecipient}

@@ -6,7 +6,9 @@ export const Card = styled.div`
   background-color: white;
 
   @media (prefers-color-scheme: dark) {
-    background-color: #111;
+    //background-color: rgb(39,43,48);
+    background-color: #242424;
+    border: 2px solid #272B30;
   }
 `;
 
@@ -48,6 +50,6 @@ export const Input = styled("input")`
   border: 1px solid #c2c2c2;
 
   @media (prefers-color-scheme: dark) {
-    border: 1px solid #fefefe;
+    border: 1px solid #272B30;
   }
 `;
