@@ -1,20 +1,34 @@
 import { useState } from "react";
-import { Address, toNano } from "ton";
+import { Address, toNano, fromNano } from "ton";
 import { useTonConnect } from "../hooks/useTonConnect";
-import { Card, FlexBoxCol, FlexBoxRow, Button, Input } from "./styled/styled";
+import { Card, FlexBoxCol, FlexBoxRow, Button, Input, Ellipsis } from "./styled/styled";
+import { useTonClient } from "../hooks/useTonClient";
+import { useAsyncInitialize } from "../hooks/useAsyncInitialize";
 
 export function TransferTon() {
-  const { sender, connected } = useTonConnect();
+  const { client } = useTonClient();
+  const { wallet, sender, connected } = useTonConnect();
 
   const [tonAmount, setTonAmount] = useState("0.01");
   const [tonRecipient, setTonRecipient] = useState(
     "EQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM9c"
   );
 
+  const balance = useAsyncInitialize(async () => {
+
+    if(!client || !wallet) return;
+    return client.getBalance(Address.parse(wallet))
+
+  }, [client, wallet])
+
   return (
     <Card>
       <FlexBoxCol>
         <h3>Transfer TON</h3>
+        <FlexBoxRow>
+          <label style={{width: 80}}>Balance </label>
+          <Ellipsis>{ balance ? fromNano(balance) + ' TON' : "Loading..." }</Ellipsis>
+        </FlexBoxRow>
         <FlexBoxRow>
           <label style={{width: 80}}>Amount </label>
           <Input

@@ -8,7 +8,7 @@ export const Card = styled.div`
   @media (prefers-color-scheme: dark) {
     //background-color: rgb(39,43,48);
     background-color: #242424;
-    border: 2px solid #272B30;
+    border: 3px double #272B30;
   }
 `;
 
@@ -28,7 +28,8 @@ export const FlexBoxCol = styled.div`
 export const Button = styled.button`
   background-color: ${(props) =>
     props.disabled ? "#6e6e6e" : "var(--tg-theme-button-color)"};
-  border: 0;
+  border: 1;
+  border-color: #272B30;
   border-radius: 8px;
   padding: 10px 20px;
   color: var(--tg-theme-button-text-color);
